@@ -1,0 +1,15 @@
+# Logdateien ausschließen
+*.log
+*.gz
+
+# Backups und temporäre Dateien
+*.bak
+*.py.bak
+*.py.log.Bak
+
+# Virtuelle Umgebung ausschließen
+venv/
+__pycache__/
+
+# Eventuell alte Experimente
+tcp2rs485.py
