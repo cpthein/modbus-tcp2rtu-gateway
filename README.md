@@ -47,6 +47,11 @@ sudo systemctl enable modbus-gateway-1.service
 
 ---
 
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE) – free to use and modify.
+
+
 ## 🇩🇪 Deutsch
 
 Dieses Repository enthält ein **leichtgewichtiges Python-Gateway**, das Modbus TCP-Anfragen an ein serielles RS485-Gerät weiterleitet. Es eignet sich z. B. für den Raspberry Pi mit mehreren USB-RS485-Adaptern, um ioBroker-Modbus-Instanzen über das Netzwerk zu entkoppeln.
@@ -98,4 +103,19 @@ sudo systemctl start modbus-gateway-0.service
 * `modbus-gateway-1.service` – systemd Service für zweiten Adapter
 * `.gitignore` – Logfiles und virtuelle Umgebung ausgeschlossen
 
-> Maintained by ChatGPT and [cpthein](https://github.com/cpthein)
+---
+
+
+### 📖 Weitere Informationen
+
+ℹ️ Detaillierte Anleitung zur Einrichtung von `systemd`-Services, virtueller Umgebung (`venv`) und Logrotation:  
+👉 [SERVICE_SETUP.md](SERVICE_SETUP.md)
+
+---
+
+## 📜 Lizenz
+
+Dieses Projekt steht unter der [MIT-Lizenz](LICENSE) – frei verwendbar und anpassbar.
+
+
+> [cpthein](https://github.com/cpthein)
