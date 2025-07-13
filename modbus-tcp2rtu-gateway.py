@@ -12,22 +12,26 @@ parser.add_argument("--rs485", default="/dev/ttyACM0", help="RS485-Gerät (z. 
 parser.add_argument("--port", type=int, default=8899, help="TCP-Port (z. B. 8899)")
 parser.add_argument("--quiet", action="store_true", help="Keine Konsolenausgabe")
 parser.add_argument("--debug", action="store_true", help="Mehr Logging-Details")
+parser.add_argument("--nolog", action="store_true", help="Kein Logging (für stabile Systeme)")
 args = parser.parse_args()
 
 # Logdateiname abhängig von Port & tty
 log_file = f"modbus-gateway-{args.rs485.split('/')[-1]}-{args.port}.log"
 
 # Logging
-logging.basicConfig(
-    filename=log_file,
-    level=logging.DEBUG if args.debug else logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
-)
-if not args.quiet:
-    console = logging.StreamHandler()
-    console.setLevel(logging.DEBUG if args.debug else logging.INFO)
-    console.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
-    logging.getLogger().addHandler(console)
+if not args.nolog:
+    logging.basicConfig(
+        filename=log_file,
+        level=logging.DEBUG if args.debug else logging.INFO,
+        format="%(asctime)s - %(levelname)s - %(message)s"
+    )
+    if not args.quiet:
+        console = logging.StreamHandler()
+        console.setLevel(logging.DEBUG if args.debug else logging.INFO)
+        console.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
+        logging.getLogger().addHandler(console)
+else:
+    logging.basicConfig(level=logging.CRITICAL)  # Nur Fehler intern, keine Datei
 
 # RS485 öffnen
 BAUDRATE = 9600

@@ -12,6 +12,7 @@ This repository contains a **lightweight Modbus TCP to RS485 gateway**, written 
 * 🌐 Can be started as a `systemd` service (see `modbus-gateway-0.service`, `modbus-gateway-1.service`)
 * ♻️ Optional log rotation via `logrotate`
 * ⚡ Robust retry mechanism for failed Modbus requests
+* ❌ `--nolog` disables logging completely
 
 ### Usage
 
@@ -23,6 +24,7 @@ Optional:
 
 * `--debug` enables debug output
 * `--quiet` suppresses stdout, logs only to file
+* `--nolog` disables logging completely (no log file will be written)
 
 ### systemd Integration
 
@@ -47,11 +49,6 @@ sudo systemctl enable modbus-gateway-1.service
 
 ---
 
-## 📜 License
-
-This project is licensed under the [MIT License](LICENSE) – free to use and modify.
-
-
 ## 🇩🇪 Deutsch
 
 Dieses Repository enthält ein **leichtgewichtiges Python-Gateway**, das Modbus TCP-Anfragen an ein serielles RS485-Gerät weiterleitet. Es eignet sich z. B. für den Raspberry Pi mit mehreren USB-RS485-Adaptern, um ioBroker-Modbus-Instanzen über das Netzwerk zu entkoppeln.
@@ -63,6 +60,7 @@ Dieses Repository enthält ein **leichtgewichtiges Python-Gateway**, das Modbus 
 * 🔒 Pro Adapter eigene Logdatei mit automatischer Rotation
 * 🌐 systemd-Services für Autostart enthalten
 * ⚡ Automatische Wiederholungen bei Timeout-Fehlern
+* ❌ `--nolog` deaktiviert Logging vollständig
 
 ### Beispielaufruf
 
@@ -74,6 +72,7 @@ Weitere Optionen:
 
 * `--debug` für Debug-Ausgabe
 * `--quiet` nur Logfile, keine Terminal-Ausgabe
+* `--nolog` deaktiviert Logging vollständig (es wird keine Logdatei geschrieben)
 
 ### Autostart mit systemd
 
@@ -94,16 +93,6 @@ sudo systemctl start modbus-gateway-0.service
 * Deye Wechselrichter 1-phasig
 * JK-BMS mit Modbus RTU
 
-### 📷 Hardware Setup
-
-Raspberry Pi mit zwei USB-RS485-Adaptern:
-
-![Raspberry Pi mit zwei USB-RS485-Adaptern](./raspberry-pi-rs485-setup.jpg)
-
-Waveshare-kompatible USB TO RS485 Adapter (Typ B):
-
-![USB zu RS485 Adapter](./usb-rs485-adapters.jpg)
-
 ---
 
 ### 📦 Dateien
@@ -113,19 +102,5 @@ Waveshare-kompatible USB TO RS485 Adapter (Typ B):
 * `modbus-gateway-1.service` – systemd Service für zweiten Adapter
 * `.gitignore` – Logfiles und virtuelle Umgebung ausgeschlossen
 
----
+> Maintained by Cpthein and ChatGPT
 
-
-### 📖 Weitere Informationen
-
-ℹ️ Detaillierte Anleitung zur Einrichtung von `systemd`-Services, virtueller Umgebung (`venv`) und Logrotation:  
-👉 [SERVICE_SETUP.md](SERVICE_SETUP.md)
-
----
-
-## 📜 Lizenz
-
-Dieses Projekt steht unter der [MIT-Lizenz](LICENSE) – frei verwendbar und anpassbar.
-
-
-> [cpthein](https://github.com/cpthein)
