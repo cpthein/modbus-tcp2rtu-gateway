@@ -93,7 +93,20 @@ sudo systemctl start modbus-gateway-0.service
 * Deye Wechselrichter 1-phasig
 * JK-BMS mit Modbus RTU
 
+### 📷 Hardware Setup
+
+Raspberry Pi mit zwei USB-RS485-Adaptern:
+
+![Raspberry Pi mit zwei USB-RS485-Adaptern](./raspberry-pi-rs485-setup.jpg)
+
+Waveshare-kompatible USB TO RS485 Adapter (Typ B):
+
+![USB zu RS485 Adapter](./usb-rs485-adapters.jpg)
+
+
 ---
+
+
 
 ### 📦 Dateien
 
